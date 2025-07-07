@@ -21,8 +21,22 @@ Content-Type: application/json
     "password": "123"
 }
 
+### Fetch all todos (protected<?>)
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxODk2Njk1LCJleHAiOjE3NTE4OTcyOTV9.5kg9tjiRKxsrJp87cccn0aBsT6QE5DYI48xdd8yhMqE
+
+### Create a new todo (protected<?>)
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxODk2Njk1LCJleHAiOjE3NTE4OTcyOTV9.5kg9tjiRKxsrJp87cccn0aBsT6QE5DYI48xdd8yhMqE
+Content-Type: application/json
+
+{
+    "task": "Finish coding"
+}
+
 ### Change the status of a todo
-POST http://localhost:3000/todos/:id
+PUT http://localhost:3000/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxODk2Njk1LCJleHAiOjE3NTE4OTcyOTV9.5kg9tjiRKxsrJp87cccn0aBsT6QE5DYI48xdd8yhMqE
 Content-Type: application/json
 
 {
@@ -30,4 +44,6 @@ Content-Type: application/json
 }
 
 ### Delete a todo
-DELETE http://localhost:3000/todos/:id
+DELETE http://localhost:3000/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxODk2Njk1LCJleHAiOjE3NTE4OTcyOTV9.5kg9tjiRKxsrJp87cccn0aBsT6QE5DYI48xdd8yhMqE
+

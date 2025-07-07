@@ -6,6 +6,11 @@ console.log("authMiddleware.js loaded");
 // The interseptor that "guards" all the todos' endpoints
 function authMiddleware(req, res, next) {
 
+    // Skipping the validation part in order to let in new users
+    if (req.path === "/register" || req.path == "/login") {
+        return next(); // God forbid this is horrible
+    }
+
     // Getting the token from the request
     const token = req.headers["authorization"];
 
@@ -22,7 +27,7 @@ function authMiddleware(req, res, next) {
         }
 
         //If the token is fine
-        req.userId = decoded; // Modifying the request, userId field
+        req.userId = decoded.id; // Modifying the request, userId field
         next(); //Moving on, "you can continue on with your journey"
     })
 }
