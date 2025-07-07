@@ -1,0 +1,33 @@
+### - Whatever this is (It's needed in order for the rest api to work)
+
+### Get todos list
+GET http://localhost:3000/todos/
+
+### Register request
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "myusername",
+    "password": "123"
+}
+
+### Log in request
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "myusername",
+    "password": "123"
+}
+
+### Change the status of a todo
+POST http://localhost:3000/todos/:id
+Content-Type: application/json
+
+{
+    "status": 1
+}
+
+### Delete a todo
+DELETE http://localhost:3000/todos/:id
